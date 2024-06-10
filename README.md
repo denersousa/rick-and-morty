@@ -1,27 +1,46 @@
-# RickMorty
+# Rick and Morty Angular App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Este projeto é uma aplicação Angular que consome a API de Rick and Morty. Ele inclui funcionalidades de autenticação, navegação, pesquisa e exibição de informações sobre personagens e episódios.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular: 17.2.0
+- Node.js: 20.11.1
+- Angular CLI: 12.0.0
+- Node Package Manager: 10.2.4
+- TypeScript: 5.3.2
+- RxJS: 7.8.0
+- Bootstrap: 5.3.3
+- ngx-infinite-scroll: 18.0.0
+- Moment.js: 2.30.1
 
-## Code scaffolding
+## Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de rodar o projeto localmente, certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-## Build
+- Node.js: [Download](https://nodejs.org/)
+- Angular CLI: [Instalação](https://angular.io/cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalação e Execução
 
-## Running unit tests
+Siga os passos abaixo para instalar e rodar o projeto:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone o repositório:
+    git clone https://github.com/denersousa/rick-and-morty.git
 
-## Running end-to-end tests
+2. Navegue até o diretório do projeto:
+    cd rick-and-morty
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Instale as dependências:
+    npm install
 
-## Further help
+4. Rode a aplicação:
+    ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Acesse `http://localhost:4200` no seu navegador para ver a aplicação em execução.
+
+
+## Sobre o ngx-infinite-scroll
+
+O ngx-infinite-scroll é uma biblioteca para Angular que permite implementar a funcionalidade de rolagem infinita em listas e grids. Com essa técnica, novos itens são carregados automaticamente conforme o usuário rola a página para baixo, melhorando a experiência do usuário ao lidar com grandes conjuntos de dados.
+
