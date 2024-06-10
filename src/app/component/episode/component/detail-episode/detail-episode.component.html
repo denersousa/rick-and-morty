@@ -1,0 +1,29 @@
+<div class="card mb-3" style="max-width: 100%; background-color: transparent; color:white;">
+  <h2 class="card-header text-center">{{dados.name}}</h2>
+  <div class="card-body">
+    <h6 class="card-title" style="color:white">{{'Episódio: ' + dados.episode}}</h6>
+    <p class="card-text" style="color:white">{{'Exibição do episódio: ' + formatarData(dados.airDate)}}</p>
+    <p class="card-text" style="color:white">{{'Criação do episódio: ' + formatarData(dados.created)}}</p>
+  </div>
+</div>
+
+<div class="card mb-3" style="max-width: 100%;">
+  <h2 class="card-header text-center">Personagens</h2>
+</div>
+<div class="row">
+  <div class="col-md-6" *ngFor="let item of characters">
+    <div class="card mb-3" style="background-color: transparent; max-width: 100%;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="item.image" class="img-fluid rounded-start" alt="Imagem do Personagem">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="color:white">{{ item.name }}</h5>
+            <p class="card-text" style="color:white">{{item.status + ' - ' + item.species}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

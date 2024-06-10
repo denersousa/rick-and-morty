@@ -1,0 +1,9 @@
+.main-content {
+  margin-left: 250px; /* Deve ser igual à largura do sidebar */
+  padding: 20px;
+}
+
+
+:host-context(.no-sidebar) .main-content {
+  margin-left: 0;
+}

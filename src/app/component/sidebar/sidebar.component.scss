@@ -1,0 +1,23 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Defina a largura desejada */
+  background-color: #333; /* Cor de fundo do sidebar */
+  color: white;
+  overflow-x: hidden; /* Para evitar barra de rolagem horizontal */
+  padding-top: 20px;
+}
+
+:host a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+:host a:hover {
+  background-color: #575757;
+}

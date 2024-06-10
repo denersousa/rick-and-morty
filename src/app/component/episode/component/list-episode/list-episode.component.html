@@ -1,0 +1,10 @@
+<div class="row" style="width: 75%;">
+  <div class="col-sm-4 p-0 mb-3 mb-sm-0" *ngFor="let episode of filteredEpisodes" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2"  (scrolled)="onScrollDown()">
+    <div class="card m-1" style="background-color: transparent;">
+      <div class="card-body d-flex flex-column" style="height:200px;">
+        <h5 class="card-title" style="color:white">{{episode.name}}</h5>
+        <a (click)="infoEpisodeGo(episode)" class="btn btn-secondary mt-auto">Ver</a>
+      </div>
+    </div>
+  </div>
+</div>

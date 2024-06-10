@@ -1,0 +1,19 @@
+.episodes-container {
+  max-height: 400px; /* Altura máxima da lista de episódios */
+  overflow-y: inherit ; /* Ativar a barra de rolagem vertical se necessário */
+}
+
+.episodes-inner {
+  /* Adicionar um espaço de rolagem interno na parte inferior para compensar a barra de rolagem horizontal */
+  padding-bottom: 17px; /* Largura da barra de rolagem horizontal padrão */
+}
+
+.episode-item {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+  }
+}

@@ -1,0 +1,16 @@
+<nav class="d-flex flex-column h-100">
+  <div class="d-flex align-items-center mb-3">
+    <img src="https://via.placeholder.com/50" class="rounded-circle me-2" alt="User Image">
+    <div>
+      <div>{{dataUser.name}}</div>
+      <small>{{dataUser.email}}</small>
+    </div>
+  </div>
+  <a (click)="homeGo()">Home</a>
+  <a (click)="listaEPisodeGo()">Episódios</a>
+  <a (click)="listCharacterGo()">Personagens</a>
+
+  <div class="mt-auto text-center">
+    <button class="btn btn-danger w-95 mb-3" (click)="logoutGo()">Logout</button>
+  </div>
+</nav>

@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  position: relative; /* Certifique-se de que o body tenha uma posição relativa */
+}
+
+body::after {
+  content: "";
+  background-image: url('./assets/capa-fundo4.jpg');
+  background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+  position: fixed; /* Posição fixa para cobrir todo o body */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9; /* Define a opacidade da imagem (0.5 = 50% opacidade) */
+  z-index: -1; /* Coloca a imagem atrás de todo o conteúdo */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.content {
+  flex-grow: 1; /* Permite que o conteúdo principal ocupe o restante da largura */
+}
+
+.link {
+  cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
+}
