@@ -4,18 +4,13 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { EpisodeModel } from '../episode/models/episode.model';
 import { IdModel } from '../shared/models/id.model';
 
-
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
 }

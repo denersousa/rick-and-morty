@@ -14,7 +14,6 @@ export class SearchComponent {
   onSearch(event: Event) {
     // Obtém o valor do elemento de entrada de texto da barra de pesquisa
     const inputElement = event.target as HTMLInputElement;
-    // Atualiza o valor da pesquisa no serviço com o valor atual da pesquisa
     this.searchService.updateSearchTerm(inputElement.value);
   }
 }

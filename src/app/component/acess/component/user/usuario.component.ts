@@ -26,26 +26,19 @@ export class UsuarioComponent {
     });
   }
 
-  //Registra um novo usuário se o formulário for válido.
   register(): void {
-    // Verifica se o formulário é válido
     if (this.userForm.valid) {
-      // Atribuiçao oss valores do formulário
       this.user = this.userForm.value;
-      // Tenta registrar o usuário
       const success = this.userService.register(this.user);
-      // Se o registro for bem-sucedido, redefina o formulário e navegue para a página de login
       if (success) {
         this.userForm.reset();
         this.irLogin();
       } else {
-        // Se o registro falhar, exibe uma mensagem de erro no console
         console.log('Erro: Usuário já cadastrado!');
       }
     }
   }
 
-  //Navega para a página de login.
   irLogin(): void {
     this.router.navigate(['/login']);
   }

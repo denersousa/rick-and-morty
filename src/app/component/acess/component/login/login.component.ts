@@ -35,13 +35,6 @@ export class LoginComponent implements OnInit {
     this.getStorage();
   }
 
-  /*
-    - Obtém perfis de usuários do local storage.
-
-    - Se não houver perfis de usuários no local storage, cria e armazena dois perfis padrão (Admin e Usuario).
-
-    Obs: Sempre é necessário que local storage tenha uma array, tanto para logar, quando para adicionar um novo usuário.
-   */
   getStorage(): void {
     const users = this.userService.getUserProfiles();
     if (!users) {
@@ -53,7 +46,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // Verificão de formulário e autenticação o usuário.
   onSubmit(): void {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
@@ -61,7 +53,6 @@ export class LoginComponent implements OnInit {
 
       this.dadosLogin = { username, password };
 
-      // Autenticação de credenciais
       const authenticated = this.authService.checkUser(this.dadosLogin);
       if (authenticated) {
         this.authService.login(authenticated);
@@ -72,7 +63,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  //Exibe um modal de erro de usuário e senha.
   showLoginErrorModal(): void {
     const modalElement = document.getElementById('loginErrorModal');
     if (modalElement) {
@@ -81,7 +71,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // Navega para a página de cadastro.
   goRegister(): void {
     this.router.navigate(['/cadastro']);
   }

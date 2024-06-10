@@ -9,7 +9,6 @@ import { ListCharacterComponent } from './component/character/component/list-cha
 import { ListEpisodeComponent } from './component/episode/component/list-episode/list-episode.component';
 import { ProfileUserComponent } from './component/acess/component/profile-user/profile-user.component';
 
-// Definição das rotas da aplicação com as rotas protegidas pelo AuthGuard
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },

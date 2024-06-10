@@ -21,14 +21,10 @@ export class ProfileUserComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    // Obtendo as informações do usuário logado
     this.user = this.authService.getLoggedUser();
   }
 
   logout(): void {
-    // Aqui você pode adicionar a lógica de deslogar o usuário
-    console.log('Usuário deslogado');
-    // Redirecionar para a página de login (ajuste o caminho conforme necessário)
     this.router.navigate(['/login']);
   }
 }

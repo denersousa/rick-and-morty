@@ -6,12 +6,12 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AcessModule } from './component/acess/component/acess.module';
 import { HomeComponent } from './component/home/home.component';
 import { ListEpisodeModule } from './component/episode/list-episode.module';
 import { SearchComponent } from './component/search/component/search.component';
 import { SearchService } from './component/search/search.service';
 import { CharacterModule } from './component/character/character.module';
+import { AcessModule } from './component/acess/acess.module';
 
 @NgModule({
   declarations: [
