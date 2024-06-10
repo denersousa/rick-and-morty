@@ -8,7 +8,6 @@ import { LoginModel } from '../../models/login.model';
 
 declare var bootstrap: any;
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,9 +15,9 @@ declare var bootstrap: any;
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  public dadosLogin: LoginModel = {username: '', password: ''}
+  public dadosLogin: LoginModel = { username: '', password: '' }
   public users: UserModel[] = [{ id: 0, name: '', newUserName: '', email: '', password: '' }]
-  public dataUser: UserModel = {id: 0, name: '', newUserName: '', email: '', password: ''}
+  public dataUser: UserModel = { id: 0, name: '', newUserName: '', email: '', password: '' }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,56 +32,48 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getStorage();
+  }
+
+  /*
+    - Obtém perfis de usuários do local storage.
+
+    - Se não houver perfis de usuários no local storage, cria e armazena dois perfis padrão (Admin e Usuario).
+
+    Obs: Sempre é necessário que local storage tenha uma array, tanto para logar, quando para adicionar um novo usuário.
+   */
+  getStorage(): void {
     const users = this.userService.getUserProfiles();
-    if(!users){
+    if (!users) {
       const fakeUser = [
         { id: 1, name: 'Admin', newUserName: 'admin', email: 'admin@example.com', password: '123456' },
-        { id: 2, name: 'Usuario', newUserName: 'user', email: 'user@example.com', password:'123456' }
-      ]
+        { id: 2, name: 'Usuario', newUserName: 'user', email: 'user@example.com', password: '123456' }
+      ];
       localStorage.setItem('userProfiles', JSON.stringify(fakeUser));
     }
   }
 
-  onSubmit() {
-  const checked = this.verificaUser();
-    if(checked){
-        const success = this.authService.login(this.dataUser);
-        if (success) {
-          this.router.navigate(['/home']);
-        } else {
-          // Manipula a falha de login, se necessário
-        }
-    } else {
-      this.showLoginErrorModal(); //Usuario ou senha invalido
-    }
-  }
-
-  verificaUser(){
-    this.users = this.userService.getUserProfiles();
+  // Verificão de formulário e autenticação o usuário.
+  onSubmit(): void {
     if (this.loginForm.valid) {
-      this.dadosLogin = {
-        username: this.loginForm.get('username')?.value,
-        password: this.loginForm.get('password')?.value}
-    }
+      const username = this.loginForm.get('username')?.value;
+      const password = this.loginForm.get('password')?.value;
 
-    const userIn = this.users.find(user => user.newUserName === this.dadosLogin.username);
-    if (userIn) {
-      this.dataUser = {
-        id: userIn.id,
-        name: userIn.name,
-        newUserName: userIn.newUserName,
-        email: userIn.email,
-        password: userIn.password
-      };
+      this.dadosLogin = { username, password };
+
+      // Autenticação de credenciais
+      const authenticated = this.authService.checkUser(this.dadosLogin);
+      if (authenticated) {
+        this.authService.login(authenticated);
+        this.router.navigate(['/home']);
+      } else {
+        this.showLoginErrorModal();
+      }
     }
-    return  this.dataUser.password === this.dadosLogin.password
   }
 
-  goRegister(){
-    this.router.navigate(['/cadastro'])
-  }
-
-  showLoginErrorModal() {
+  //Exibe um modal de erro de usuário e senha.
+  showLoginErrorModal(): void {
     const modalElement = document.getElementById('loginErrorModal');
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement);
@@ -90,4 +81,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // Navega para a página de cadastro.
+  goRegister(): void {
+    this.router.navigate(['/cadastro']);
+  }
 }

@@ -6,8 +6,9 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
+  //Verificão de autenticação de usuário antes de permitir o acesso à rota.
   canActivate(): boolean | UrlTree {
     if (this.authService.isLoggedIn()) {
       return true;

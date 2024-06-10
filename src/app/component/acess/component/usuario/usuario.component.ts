@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.scss']
 })
-export class UsuarioComponent implements OnInit {
+export class UsuarioComponent {
   public userForm: FormGroup;
-  public user: UserModel ={ id: 0, name: '', newUserName: '', email: '', password: '' }
-
+  public user: UserModel = { id: 0, name: '', newUserName: '', email: '', password: '' }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,25 +26,27 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
+  //Registra um novo usuário se o formulário for válido.
   register(): void {
+    // Verifica se o formulário é válido
     if (this.userForm.valid) {
+      // Atribuiçao oss valores do formulário
       this.user = this.userForm.value;
+      // Tenta registrar o usuário
       const success = this.userService.register(this.user);
+      // Se o registro for bem-sucedido, redefina o formulário e navegue para a página de login
       if (success) {
-        // Registro bem-sucedido
         this.userForm.reset();
-        this.irLogin()
+        this.irLogin();
       } else {
-        // Exibir mensagem de erro ao usuário (usuário já cadastrado, por exemplo)
+        // Se o registro falhar, exibe uma mensagem de erro no console
         console.log('Erro: Usuário já cadastrado!');
       }
     }
   }
 
-  irLogin(){
-    this.router.navigate(['/login'])
+  //Navega para a página de login.
+  irLogin(): void {
+    this.router.navigate(['/login']);
   }
 }

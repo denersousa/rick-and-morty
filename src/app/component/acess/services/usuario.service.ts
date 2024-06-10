@@ -1,38 +1,30 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { UserModel } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService{
-  private users: UserModel[] = [
-    { id: 1, name: 'John Doe', newUserName: 'john', email: 'john@example.com', password: '123456' },
-    // Adicione outros usuários aqui
-  ];
+export class UsuarioService {
+  constructor() { }
 
-  constructor() {
-    // Inicializa os perfis de usuário no localStorage, se ainda não estiverem definidos
-    if (!localStorage.getItem('userProfiles')) {
-      localStorage.setItem('userProfiles', JSON.stringify(this.users));
-    }
-  }
-
+  //Registra um novo usuário.
   register(newUser: UserModel): boolean {
     const users = this.getUserProfiles();
+
+    //Verifica se o novo usuário já existe na lista de perfis de usuários.
     const existingUser = users.find(user => user.email === newUser.email);
-    if (existingUser) {
-      // Usuário já está cadastrado
-      return false;
-    } else {
-      // Adiciona o novo usuário à lista de perfis de usuários
+    //Adiciona o novo usuário à lista de perfis de usuários
+    if (!existingUser) {
       users.push(newUser);
       localStorage.setItem('userProfiles', JSON.stringify(users));
-      return true;
-    }
+      return true
+    } else { return false }
   }
 
+  //Obtém os perfis de usuários armazenados no local storage.
   getUserProfiles(): UserModel[] {
     const userProfilesString = localStorage.getItem('userProfiles');
+    //Retorna um array de objetos UserModel representando os perfis de usuários.
     return userProfilesString ? JSON.parse(userProfilesString) : [];
   }
 }
