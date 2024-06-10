@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Perfil</h5>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <p id="name" class="form-control-plaintext">{{ user.name }}</p>
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Nome de Usuário</label>
+            <p id="username" class="form-control-plaintext">{{ user.newUserName }}</p>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <p id="email" class="form-control-plaintext">{{ user.email }}</p>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <p id="password" class="form-control-plaintext">{{user.password}}</p>
+          </div>
+          <div class="text-center">
+
+            <button class="btn btn-danger text-center" (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

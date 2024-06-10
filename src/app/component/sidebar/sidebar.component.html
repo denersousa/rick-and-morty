@@ -1,11 +1,11 @@
 <nav class="d-flex flex-column h-100">
-  <div class="d-flex align-items-center mb-3">
-    <img src="https://via.placeholder.com/50" class="rounded-circle me-2" alt="User Image">
-    <div>
-      <div>{{dataUser.name}}</div>
-      <small>{{dataUser.email}}</small>
+  <div (click)="profileGo()" class="d-flex align-items-center mb-3 user-card">
+    <img src="https://via.placeholder.com/50" class="rounded-circle m-2" alt="User Image">
+    <div class="user-info">
+      <div>{{ 'Óla, ' + dataUser.name }}</div>
     </div>
   </div>
+
   <a (click)="homeGo()">Home</a>
   <a (click)="listaEpisodeGo()">Episódios</a>
   <a (click)="listCharacterGo()">Personagens</a>

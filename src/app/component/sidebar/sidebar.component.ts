@@ -72,4 +72,9 @@ export class SidebarComponent implements OnInit {
   homeGo() {
     this.router.navigate(['/home']);
   }
+
+  // Navega para a página usuário
+  profileGo(){
+    this.router.navigate(['/usuario']);
+  }
 }

@@ -20,7 +20,7 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         // Verifica a URL atual para determinar se o sidebar e a barra de pesquisa devem ser exibidos
         this.showSidebar = !this.router.url.includes('login') && !this.router.url.includes('cadastro');
-        this.showSearch = !this.router.url.includes('home');
+        this.showSearch = !this.router.url.includes('home') && !this.router.url.includes('usuario')
 
         // Adiciona ou remove a classe 'no-sidebar' no body com base na exibição do sidebar
         if (this.showSidebar) {

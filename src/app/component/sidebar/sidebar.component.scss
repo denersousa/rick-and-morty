@@ -21,3 +21,25 @@
 :host a:hover {
   background-color: #575757;
 }
+
+/* Adicione essas regras para garantir a quebra de texto */
+.user-info {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+:host small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Permitir quebra de linha */
+}
+
+.user-card {
+  cursor: pointer; /* Indica que o elemento é clicável */
+  transition: background-color 0.3s ease; /* Transição suave para o background */
+}
+
+.user-card:hover {
+  background-color: #f0f0f059; /* Cor de fundo ao passar o mouse */
+}
