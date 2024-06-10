@@ -7,23 +7,27 @@ import { EpisodeModel, EpisodeResponseModel } from '../models/episode.model';
   providedIn: 'root'
 })
 export class EpisodeService {
-  private baseUrl = 'https://rickandmortyapi.com/api';
+  private baseUrl: string = 'https://rickandmortyapi.com/api';
 
   constructor(private http: HttpClient) { }
 
+  // Obtém os detalhes de um episódio pelo ID.
   getEpisode(id: number): Observable<EpisodeModel> {
-    return this.http.get<EpisodeModel>(`${this.baseUrl}/episode/${id}`)
+    return this.http.get<EpisodeModel>(`${this.baseUrl}/episode/${id}`);
   }
 
+  // Obtém todos os episódios.
   getAllEpisodes(): Observable<EpisodeResponseModel> {
     return this.http.get<EpisodeResponseModel>(`${this.baseUrl}/episode`);
   }
 
-  getNextPage(url: string): Observable<EpisodeResponseModel>{
-    return this.http.get<EpisodeResponseModel>(`${url}`)
+  // Obtém a próxima página de episódios.
+  getNextPage(url: string): Observable<EpisodeResponseModel> {
+    return this.http.get<EpisodeResponseModel>(`${url}`);
   }
 
-  filter(data: string) : Observable<EpisodeResponseModel>{
-    return this.http.get<EpisodeResponseModel>(`${this.baseUrl}/episode/?name=${data}`)
+  // Filtra os episódios pelo nome.
+  filter(name: string): Observable<EpisodeResponseModel> {
+    return this.http.get<EpisodeResponseModel>(`${this.baseUrl}/episode/?name=${name}`);
   }
 }
