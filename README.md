@@ -44,3 +44,9 @@ Acesse `http://localhost:4200` no seu navegador para ver a aplicação em execu�
 
 O ngx-infinite-scroll é uma biblioteca para Angular que permite implementar a funcionalidade de rolagem infinita em listas e grids. Com essa técnica, novos itens são carregados automaticamente conforme o usuário rola a página para baixo, melhorando a experiência do usuário ao lidar com grandes conjuntos de dados.
 
+## Informação do desenvolvedor
+
+- Nome: Dener de Oliveira Sousa
+- Email: denersousa.sp@gmail.com
+
+
