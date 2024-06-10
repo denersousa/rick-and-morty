@@ -46,7 +46,7 @@ O ngx-infinite-scroll é uma biblioteca para Angular que permite implementar a f
 
 ## Informação do desenvolvedor
 
-Nome: Dener de Oliveira Sousa
-Email: denersousa.sp@gmail.com
+- Nome: Dener de Oliveira Sousa
+- Email: denersousa.sp@gmail.com
 
 
