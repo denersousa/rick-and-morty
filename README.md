@@ -11,7 +11,7 @@ Este projeto é uma aplicação Angular que consome a API de Rick and Morty. Ele
 - TypeScript: 5.3.2
 - RxJS: 7.8.0
 - Bootstrap: 5.3.3
-- ngx-infinite-scroll: 18.0.0
+- ngx-infinite-scroll: 17.0.0
 - Moment.js: 2.30.1
 
 ## Pré-requisitos
