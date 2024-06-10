@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SearchService {
+  // Declaração de um BehaviorSubject para armazenar o termo de pesquisa
   private searchTerm = new BehaviorSubject<string>('');
   public currentSearchTerm = this.searchTerm.asObservable();
 

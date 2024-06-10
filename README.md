@@ -44,9 +44,61 @@ Acesse `http://localhost:4200` no seu navegador para ver a aplicação em execu�
 
 O ngx-infinite-scroll é uma biblioteca para Angular que permite implementar a funcionalidade de rolagem infinita em listas e grids. Com essa técnica, novos itens são carregados automaticamente conforme o usuário rola a página para baixo, melhorando a experiência do usuário ao lidar com grandes conjuntos de dados.
 
+## Componentes Principais
+
+### LoginComponent
+
+Gerencia o formulário de login, validação e autenticação de usuários.
+
+### UsuarioComponent
+
+Gerencia o formulário de registro de novos usuários.
+
+### ListCharacterComponent
+
+Exibe a lista de personagens, com funcionalidade de pesquisa e scroll infinito.
+
+### DetailEpisodeComponent
+
+Exibe os detalhes de um episódio específico, incluindo a lista de personagens que aparecem no episódio.
+
+### ListEpisodeComponent
+
+Exibe a lista de episódios, com funcionalidade de pesquisa e scroll infinito.
+
+### SidebarComponent
+
+Gerencia a navegação da aplicação, mostrando ou ocultando o sidebar baseado na rota atual.
+
+## Serviços
+
+### AuthService
+
+Gerencia a autenticação e armazenamento dos dados do usuário.
+
+### UsuarioService
+
+Gerencia os dados dos usuários, incluindo registro e recuperação de perfis de usuário.
+
+### CharacterService
+
+Gerencia a obtenção de dados de personagens da API de Rick and Morty.
+
+### EpisodeService
+
+Gerencia a obtenção de dados de episódios da API de Rick and Morty.
+
+### SearchService
+
+Gerencia o termo de pesquisa global usado na aplicação.
+
+## Guarda de Rotas
+
+### AuthGuard
+
+Protege rotas que requerem autenticação.
+
 ## Informação do desenvolvedor
 
 - Nome: Dener de Oliveira Sousa
 - Email: denersousa.sp@gmail.com
-
-
